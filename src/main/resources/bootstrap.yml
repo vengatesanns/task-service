@@ -1,0 +1,13 @@
+server:
+   port: 7300
+   
+   
+   
+spring:
+   application:
+    name: task-service
+   cloud:
+    config: 
+      uri:  http://localhost:8888                         #Cloud Server Config  (task-service properties)
+
+    
