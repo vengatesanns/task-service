@@ -2,6 +2,7 @@ package com.hackpro.taskservice.utilities;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.EntityListeners;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Temporal;
@@ -20,13 +21,19 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public abstract class CustomBaseClass {
 	
 	@JsonIgnore
+	@Column(updatable=false)
 	protected Date createdAt;
+	
 	@JsonIgnore
 	protected Date modifiedAt;
+	
 	@JsonIgnore
 	protected String modifiedBy;
+	
 	@JsonIgnore
+	@Column(updatable=false)
 	protected String createdBy;
+	
 	protected boolean active;
 
 	 @CreatedDate
