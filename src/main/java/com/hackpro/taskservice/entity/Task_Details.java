@@ -21,6 +21,10 @@ public class Task_Details extends CustomBaseClass {
 	private String taskDescription;
 
 	private String taskLevel;
+	
+	private String moduleName;
+	
+	private String reportingPerson;
 
 	public long getTaskId() {
 		return taskId;
@@ -52,6 +56,22 @@ public class Task_Details extends CustomBaseClass {
 
 	public void setTaskLevel(String taskLevel) {
 		this.taskLevel = taskLevel;
+	}
+
+	public String getModuleName() {
+		return moduleName;
+	}
+
+	public void setModuleName(String moduleName) {
+		this.moduleName = moduleName;
+	}
+
+	public String getReportingPerson() {
+		return reportingPerson;
+	}
+
+	public void setReportingPerson(String reportingPerson) {
+		this.reportingPerson = reportingPerson;
 	}
 	
 	
