@@ -10,4 +10,14 @@ spring:
     config: 
       uri:  http://localhost:8888                         #Cloud Server Config  (task-service properties)
 
-    
+
+
+#module-service:
+#   ribbon:
+#      listOfServers: http://localhost:7400,http://localhost:7401    
+        
+eureka:
+  client:
+    service-url:
+         default-zone: http://localhost:8761/eureka
+                  

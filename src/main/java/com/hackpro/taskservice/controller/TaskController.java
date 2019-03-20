@@ -46,13 +46,15 @@ public class TaskController {
 	
 	//With Feign Client for Call (module-service) to get module Information
 	@PostMapping("/saveUserTask-feign/{module_id}")
-	public void saveUserFeignTask(@RequestBody Task_Details tasks,@PathVariable("module_id") long moduleId)
+	public Task_Details saveUserFeignTask(@RequestBody Task_Details tasks,@PathVariable("module_id") long moduleId)
 	{
 	   
 	   Task_Details moduleInfo = moduleServiceProxy.findByModuleId(moduleId);
 	   tasks.setModuleName(moduleInfo.getModuleName());
 	   tasks.setReportingPerson(moduleInfo.getReportingPerson());
+	   tasks.setPortNo(moduleInfo.getPortNo());
 	   taskService.saveUserTask(tasks);
+	   return tasks;
 	}
 
 	
