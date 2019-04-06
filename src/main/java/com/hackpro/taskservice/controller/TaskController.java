@@ -2,7 +2,8 @@ package com.hackpro.taskservice.controller;
 
 import java.util.List;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,7 +22,7 @@ import com.hackpro.taskservice.service.TaskService;
 @RequestMapping("/home/task/")
 public class TaskController {
 	
-	private final static Logger logger = Logger.getLogger(TaskController.class);
+	private final static Logger logger = LoggerFactory.getLogger(TaskController.class);
 	
 	@Autowired
 	private TaskService taskService;
@@ -54,6 +55,7 @@ public class TaskController {
 	   tasks.setReportingPerson(moduleInfo.getReportingPerson());
 	   tasks.setPortNo(moduleInfo.getPortNo());
 	   taskService.saveUserTask(tasks);
+	   logger.info("{}",tasks);
 	   return tasks;
 	}
 
